@@ -14,7 +14,8 @@ services:
       - "5000:5000"
     restart: always
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nexusweb.conf:/etc/nginx/conf.d/nexusweb.conf
+      - ./nginx/nexusrep.conf:/etc/nginx/conf.d/nexusrep.conf
       - ./private.key:/etc/nginx/
       - ./cert.crt:/etc/nginx/
     depends_on:
