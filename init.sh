@@ -15,7 +15,7 @@ if ! [ -x "$(command -v openssl)" ]; then
   exit 1
 fi
 
-sudo openssl req -nodes -days 3650 -x509 -newkey rsa:2048 -keyout /. -out /. -subj '/CN=www.test.com/O=My Company Name LTD./C=US'
+sudo openssl req -nodes -days 3650 -x509 -newkey rsa:2048 -keyout ./private.key -out ./cert.crt -subj '/CN=www.test.com/O=My Company Name LTD./C=US'
 
 sudo docker-compose up -d
 
