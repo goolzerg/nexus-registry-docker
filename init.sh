@@ -20,7 +20,7 @@ sudo openssl req -nodes -days 3650 -x509 -newkey rsa:2048 -keyout ./private.key 
 sudo docker-compose up -d
 
 until curl --fail --insecure https://localhost; do
-  sleep 1
+  sleep 5
   echo "Wait..."
 done
 
