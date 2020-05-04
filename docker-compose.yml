@@ -16,8 +16,8 @@ services:
     volumes:
       - ./nginx/nexusweb.conf:/etc/nginx/conf.d/nexusweb.conf
       - ./nginx/nexusrep.conf:/etc/nginx/conf.d/nexusrep.conf
-      - ./private.key:/etc/nginx/
-      - ./cert.crt:/etc/nginx/
+      - ./private.key:/etc/nginx/private.key
+      - ./cert.crt:/etc/nginx/cert.crt
     depends_on:
       - nexus
 volumes:
