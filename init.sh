@@ -21,9 +21,10 @@ sudo docker-compose up -d
 
 until curl --fail --insecure https://localhost; do
   sleep 1
+  echo "Wait..."
 done
 
 curl -X POST -u "admin:admin123" --insecure "https://127.0.0.1/service/rest/beta/repositories/docker/hosted" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"name\": \"docker_repo\", \"online\": true, \"storage\": { \"blobStoreName\": \"default\", \"strictContentTypeValidation\": true, \"writePolicy\": \"ALLOW_ONCE\" }, \"docker\": { \"v1Enabled\": false, \"forceBasicAuth\": true, \"httpPort\": 5000 }}"
-sudo password=$(docker-compose exec nexus cat /nexus-data/admin.password)
+password=$(sudo docker-compose exec nexus cat /nexus-data/admin.password)
 sleep 5
 echo "Admin password is: $password"
