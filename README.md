@@ -17,7 +17,7 @@ At first image must be tagged:
 ```
 docker tag <image id> localhost:5000/<tag>
 ```
-Then we can to push it
+Then we can push it
 ```
 docker push localhost:5000/<tag>
 ```
