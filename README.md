@@ -1,5 +1,5 @@
 # nexus_nginx.docker
-Dockerized nexus repository with nginx as a reverse proxy.
+Dockerized nexus repository with nginx as a reverse proxy with TLS.
 
 # Install
 
