@@ -1,7 +1,8 @@
 # nexus_nginx.docker
 Dockerized nexus repository with nginx as a reverse proxy.
 
-#Install
+# Install
+
 ```
 chmod +x init.sh
 ./init.sh
