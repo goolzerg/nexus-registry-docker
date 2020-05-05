@@ -10,3 +10,18 @@ chmod +x init.sh
 
 Script will create Docker hosted repository on port 5000, web starts on 443 port.
 Nexus uses standart port.
+
+# Push/Pull images
+
+At first image must be tagged:
+```
+docker tag <image id> localhost:5000/<tag>
+```
+Then we can to push it
+```
+docker push localhost:5000/<tag>
+```
+or pull
+```
+docker pull localhost:5000/<tag>
+```
