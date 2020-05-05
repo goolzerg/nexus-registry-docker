@@ -17,4 +17,4 @@ services:
       - nexus
 volumes:
   nexus-data:
-    external: false
+    external: true
