@@ -21,8 +21,9 @@ sudo docker volume create --name=nexus-data
 sudo docker-compose up -d
 
 until curl --fail --insecure https://localhost; do
+  echo "Nexus server is starting"
   echo "Wait..."
-  sleep 5
+  sleep 15
 done
 
 password=$(sudo docker-compose exec nexus cat /nexus-data/admin.password)

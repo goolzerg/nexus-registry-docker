@@ -7,17 +7,12 @@ services:
     volumes:
       - 'nexus-data:/nexus-data'
   nginx:
-    image: "nginx"
+    build: .
     container_name: nginx
     ports:
       - "443:443"
       - "5000:5000"
     restart: always
-    volumes:
-      - ./nginx/nexusweb.conf:/etc/nginx/conf.d/nexusweb.conf
-      - ./nginx/nexusrep.conf:/etc/nginx/conf.d/nexusrep.conf
-      - ./private.key:/etc/nginx/private.key
-      - ./cert.crt:/etc/nginx/cert.crt
     depends_on:
       - nexus
 volumes:
