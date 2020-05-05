@@ -8,7 +8,8 @@ services:
       - 'nexus-data:/nexus-data'
   nginx:
     build: .
-    container_name: nginx
+    image: nginx_nexus
+    container_name: nginx_nexus
     ports:
       - "443:443"
       - "5000:5000"
