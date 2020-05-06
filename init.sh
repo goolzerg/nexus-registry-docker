@@ -4,7 +4,6 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   echo 'Installing...'
   sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   sudo chmod +x /usr/local/bin/docker-compose
-  exit 1
 fi
 
 if ! [ -x "$(command -v openssl)" ]; then
@@ -12,7 +11,6 @@ if ! [ -x "$(command -v openssl)" ]; then
   echo 'Installing...'
   sudo apt-get update
   sudo apt-get install openssl
-  exit 1
 fi
 
 sudo openssl req -nodes -days 3650 -x509 -newkey rsa:2048 -keyout ./private.key -out ./cert.crt -subj '/CN=www.test.com/O=My Company Name LTD./C=US'
@@ -23,7 +21,7 @@ sudo docker-compose up -d
 until curl --fail --insecure https://localhost; do
   echo "Nexus server is starting"
   echo "Wait..."
-  sleep 15
+  sleep 20
 done
 
 password=$(sudo docker-compose exec nexus cat /nexus-data/admin.password)
