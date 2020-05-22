@@ -13,7 +13,7 @@ if ! [ -x "$(command -v openssl)" ]; then
   sudo apt-get install openssl
 fi
 
-sudo openssl req -nodes -days 3650 -x509 -newkey rsa:2048 -keyout ./private.key -out ./cert.crt -subj '/CN=www.test.com/O=My Company Name LTD./C=US'
+openssl req -nodes -days 3650 -x509 -newkey rsa:2048 -keyout ./private.key -out ./cert.crt -subj '/CN=www.test.com/O=My Company Name LTD./C=US'
 
 sudo docker volume create --name=nexus-data
 sudo docker-compose up -d
