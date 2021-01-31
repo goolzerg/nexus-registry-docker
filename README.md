@@ -1,17 +1,22 @@
-# nexus_nginx.docker
-Dockerized nexus repository with nginx as a reverse proxy with TLS.
+## Description
+Dockerized Nexus repository with nginx as a reverse proxy with TLS.
 
-# Install
+## Prerequisites
+- Debian/Ubuntu
+- Docker and docker-compose 
+- Openssl
 
+## Installation
 ```
 chmod +x init.sh
 ./init.sh
 ```
 
-Script creates Docker hosted repository on port 5000, web starts on 443 port.
-Nexus uses standart port.
+Script automatically creates SSL self-signed certificate.
+After installation nexus will have a created docker hosted repository on port 5000.
+UI is accessiable via localhost:443.
 
-# Push/Pull images
+## Push/Pull images
 
 At first image must be tagged:
 ```

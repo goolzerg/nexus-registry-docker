@@ -1,4 +1,8 @@
-version: '3'
+version: '3.4'
+
+volumes:
+  nexus-data:
+
 services:
   nexus:
     image: "sonatype/nexus3"
@@ -16,6 +20,3 @@ services:
     restart: always
     depends_on:
       - nexus
-volumes:
-  nexus-data:
-    external: true
